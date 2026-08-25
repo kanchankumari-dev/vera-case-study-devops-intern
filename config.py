@@ -1,2 +1,2 @@
-API_KEY = "ghp_1234567890abcdefghijklmnopqrstuvwxyz"
+API_KEY = "ghp_0000000000000000000000000000000000000"
 DB_PATH = "tasks.json"
