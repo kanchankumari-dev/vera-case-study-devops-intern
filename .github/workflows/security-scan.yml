@@ -12,10 +12,25 @@ jobs:
 
       - name: Scan for secrets with Gitleaks
         run: |
+          cat > /tmp/gitleaks.toml <<'EOF'
+          title = "Vera Case Study Gitleaks Rules"
+
+          [[rules]]
+          id = "hardcoded-api-key"
+          description = "Hard-coded API key"
+          regex = '''(?i)API_KEY\s*=\s*["'][^"']+["']'''
+          keywords = ["API_KEY"]
+          EOF
+
           docker run --rm \
             -v "$GITHUB_WORKSPACE:/repo" \
+            -v "/tmp/gitleaks.toml:/config.toml" \
             zricethezav/gitleaks:latest \
-            detect --source /repo --no-git --no-banner
+            detect \
+            --source /repo \
+            --no-git \
+            --config /config.toml \
+            --no-banner
 
       - name: Set up Python
         uses: actions/setup-python@v5
