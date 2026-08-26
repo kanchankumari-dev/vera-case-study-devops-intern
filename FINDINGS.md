@@ -23,6 +23,7 @@ However, GitHub Secrets does not automatically make an application secure. A sec
 
 ## What I got stuck on
 
-I initially had trouble getting the GitHub Actions workflow to recognize and execute correctly, and then had to verify that Gitleaks was actually detecting the hard-coded credential. I used GitHub documentation and ChatGPT to troubleshoot the workflow structure, GitHub Actions configuration, and security scanning setup.
+I initially had trouble getting the GitHub Actions workflow to recognize and execute correctly, and then had to verify that Gitleaks was actually detecting the hard-coded credential.Also I got one error because I was using an old version of pip-audits, so I corrected that. I also had to add some new rules for Gitleaks to detect the credential and I used chatGPT for that. 
 
-I used ChatGPT and Claude during this case study to help troubleshoot GitHub Actions/Gitleaks configuration and workflow structure. I reviewed and tested the suggested changes myself. I also used chatGPT to draft this document.
+Overall, I used ChatGPT and Claude during this case study to help troubleshoot GitHub Actions/Gitleaks configuration and workflow structure. I reviewed and tested the suggested changes myself. 
+
