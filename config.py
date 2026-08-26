@@ -1,2 +1,4 @@
-API_KEY = "ghp_0000000000000000000000000000000000000"
+import os
+
+API_KEY = os.getenv("API_KEY")
 DB_PATH = "tasks.json"
